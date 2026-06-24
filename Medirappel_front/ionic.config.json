@@ -1,0 +1,7 @@
+{
+  "name": "Medirappel_front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
