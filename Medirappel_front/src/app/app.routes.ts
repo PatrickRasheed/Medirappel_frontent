@@ -22,4 +22,8 @@ export const routes: Routes = [
     path: 'password',
     loadComponent: () => import('./pages/password/password.page').then( m => m.PasswordPage)
   },
+  {
+    path: 'otp',
+    loadComponent: () => import('./pages/otp/otp.page').then( m => m.OtpPage)
+  },
 ];
