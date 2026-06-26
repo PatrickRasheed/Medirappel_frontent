@@ -20,7 +20,7 @@ export const routes: Routes = [
   },
   {
     path: 'password',
-    loadComponent: () => import('./pages/password/password.page').then( m => m.PasswordPage)
+    loadComponent: () => import('./pages/password/password.page').then( m => m.PasswordPageComponent)
   },
   {
     path: 'otp',
