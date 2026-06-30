@@ -6,18 +6,28 @@
       </ion-card-header>
 
       <ion-card-content>
-
         <div class="code-inputs">
-          <ion-input class="code-box" maxlength="1" type="tel" inputmode="numeric"></ion-input>
-          <ion-input class="code-box" maxlength="1" type="tel" inputmode="numeric"></ion-input>
-          <ion-input class="code-box" maxlength="1" type="tel" inputmode="numeric"></ion-input>
-          <ion-input class="code-box" maxlength="1" type="tel" inputmode="numeric"></ion-input>
+          <ion-input
+            *ngFor="let digit of digits; let i = index"
+            class="code-box"
+            maxlength="1"
+            type="tel"
+            inputmode="numeric"
+            [value]="digit"
+            (ionInput)="onDigitInput($event, i)"
+          ></ion-input>
         </div>
 
         <p class="subtitle">Vous allez recevoir un code par mail</p>
 
-        <ion-button color="primary" expand="block" href="/password">Continuer</ion-button>
+        <ion-text color="danger" *ngIf="errorMessage">
+          <p class="ion-padding-start">{{ errorMessage }}</p>
+        </ion-text>
 
+        <ion-button color="primary" expand="block" (click)="onSubmit()" [disabled]="isLoading">
+          <ion-spinner *ngIf="isLoading" name="dots"></ion-spinner>
+          <span *ngIf="!isLoading">Continuer</span>
+        </ion-button>
       </ion-card-content>
     </ion-card>
   </div>
