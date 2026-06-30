@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+// src/app/pages/login/login.page.ts
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonInput, IonItem, IonLabel } from '@ionic/angular/standalone';
-
-// #region agent log
-fetch('http://127.0.0.1:7765/ingest/54608c58-b194-4e91-87ad-991a055ea519',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'bb5ba7'},body:JSON.stringify({sessionId:'bb5ba7',runId:'pre-fix',hypothesisId:'H1',location:'src/app/pages/login/login.page.ts:6',message:'LoginPage module evaluated',data:{standalone:true},timestamp:Date.now()})}).catch(()=>{});
-// #endregion
+import { Router } from '@angular/router';
+import {
+  IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle,
+  IonCardTitle, IonContent, IonInput, IonItem, IonLabel, IonText, IonSpinner,
+} from '@ionic/angular/standalone';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,31 +15,38 @@ fetch('http://127.0.0.1:7765/ingest/54608c58-b194-4e91-87ad-991a055ea519',{metho
   styleUrls: ['./login.page.scss'],
   standalone: true,
   imports: [
-    IonContent,
-    IonCard,
-    IonCardHeader,
-    IonCardTitle,
-    IonCardContent,
-    CommonModule,
-    FormsModule,
-    IonItem,
-    IonInput,
-    IonLabel,
-    IonButton,
-],
+    IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle,
+    IonCardContent, CommonModule, FormsModule, IonItem, IonInput, IonLabel,
+    IonButton, IonText, IonSpinner,
+  ],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
+  email = '';
+  password = '';
+  isLoading = false;
+  errorMessage = '';
 
-  constructor() {
-    // #region agent log
-    fetch('http://127.0.0.1:7765/ingest/54608c58-b194-4e91-87ad-991a055ea519',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'bb5ba7'},body:JSON.stringify({sessionId:'bb5ba7',runId:'pre-fix',hypothesisId:'H2',location:'src/app/pages/login/login.page.ts:18',message:'LoginPage constructor reached',data:{component:'LoginPage'},timestamp:Date.now()})}).catch(()=>{});
-    // #endregion
+  constructor(private authService: AuthService, private router: Router) {}
+
+  onSubmit() {
+    this.errorMessage = '';
+
+    if (!this.email || !this.password) {
+      this.errorMessage = "Veuillez remplir tous les champs.";
+      return;
+    }
+
+    this.isLoading = true;
+
+    this.authService.login(this.email, this.password).subscribe({
+      next: () => {
+        this.isLoading = false;
+        this.router.navigateByUrl('/home');
+      },
+      error: (err) => {
+        this.isLoading = false;
+        this.errorMessage = err.message;
+      },
+    });
   }
-
-  ngOnInit() {
-    // #region agent log
-    fetch('http://127.0.0.1:7765/ingest/54608c58-b194-4e91-87ad-991a055ea519',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'bb5ba7'},body:JSON.stringify({sessionId:'bb5ba7',runId:'pre-fix',hypothesisId:'H3',location:'src/app/pages/login/login.page.ts:23',message:'LoginPage ngOnInit reached',data:{lifecycle:'ngOnInit'},timestamp:Date.now()})}).catch(()=>{});
-    // #endregion
-  }
-
 }
