@@ -1,0 +1,8 @@
+{"sessionId":"bb5ba7","runId":"pre-fix","hypothesisId":"H1","location":"src/app/pages/login/login.page.ts:6","message":"LoginPage module evaluated","data":{"standalone":true},"timestamp":1782719876682}
+{"sessionId":"bb5ba7","runId":"pre-fix","hypothesisId":"H1","location":"src/app/pages/login/login.page.ts:6","message":"LoginPage module evaluated","data":{"standalone":true},"timestamp":1782719886108}
+{"sessionId":"bb5ba7","runId":"pre-fix","hypothesisId":"H2","location":"src/app/pages/login/login.page.ts:18","message":"LoginPage constructor reached","data":{"component":"LoginPage"},"timestamp":1782719886110}
+{"sessionId":"bb5ba7","runId":"pre-fix","hypothesisId":"H3","location":"src/app/pages/login/login.page.ts:23","message":"LoginPage ngOnInit reached","data":{"lifecycle":"ngOnInit"},"timestamp":1782719886122}
+{"sessionId":"bb5ba7","runId":"pre-fix","hypothesisId":"H1","location":"src/app/pages/login/login.page.ts:6","message":"LoginPage module evaluated","data":{"standalone":true},"timestamp":1782719912041}
+{"sessionId":"bb5ba7","runId":"pre-fix","hypothesisId":"H1","location":"src/app/pages/login/login.page.ts:6","message":"LoginPage module evaluated","data":{"standalone":true},"timestamp":1782719916839}
+{"sessionId":"bb5ba7","runId":"pre-fix","hypothesisId":"H1","location":"src/app/pages/login/login.page.ts:6","message":"LoginPage module evaluated","data":{"standalone":true},"timestamp":1782719918704}
+{"sessionId":"bb5ba7","runId":"pre-fix","hypothesisId":"H1","location":"src/app/pages/login/login.page.ts:6","message":"LoginPage module evaluated","data":{"standalone":true},"timestamp":1782724320046}
