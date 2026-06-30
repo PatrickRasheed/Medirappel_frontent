@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {
   IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle,
   IonCardTitle, IonContent, IonInput, IonItem, IonLabel, IonText, IonSpinner,
@@ -17,7 +17,7 @@ import { AuthService } from '../../services/auth.service';
   imports: [
     IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle,
     IonCardContent, CommonModule, FormsModule, IonItem, IonInput, IonLabel,
-    IonButton, IonText, IonSpinner,
+    IonButton, IonText, IonSpinner, RouterModule,
   ],
 })
 export class LoginPage {
