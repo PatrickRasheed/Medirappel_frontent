@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonInput, IonItem, IonLabel } from '@ionic/angular/standalone';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonInput, IonItem, IonLabel } from '@ionic/angular/standalone';
 
 // #region agent log
 fetch('http://127.0.0.1:7765/ingest/54608c58-b194-4e91-87ad-991a055ea519',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'bb5ba7'},body:JSON.stringify({sessionId:'bb5ba7',runId:'pre-fix',hypothesisId:'H1',location:'src/app/pages/login/login.page.ts:6',message:'LoginPage module evaluated',data:{standalone:true},timestamp:Date.now()})}).catch(()=>{});
@@ -17,7 +17,6 @@ fetch('http://127.0.0.1:7765/ingest/54608c58-b194-4e91-87ad-991a055ea519',{metho
     IonCard,
     IonCardHeader,
     IonCardTitle,
-    IonCardSubtitle,
     IonCardContent,
     CommonModule,
     FormsModule,
